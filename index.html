@@ -6,33 +6,39 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-  <div>
+<header>
     <h1>Weather Dashboard</h1>
+</header>
+<body class="container">
     
-    <!-- Search Form -->
-    <div>
-      <input type="text" id="city-input" placeholder="Enter city name">
-      <button id="search-btn">Search</button>
-    </div>
+    <aside>
+            <!-- Search Form -->
+        <div>
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-btn">Search</button>
+            <div id="search-history-list"></div>
+        </div>
+    </aside>
+    <main>
+            <!-- Current Weather Display -->
+        <div id="today-container">
+            <h2 id="city-name"></h2>
+            <p id="date"></p>
+            <img id="weather-icon" alt="Weather Icon">
+            <p id="temperature"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+        </div>
 
-    <!-- Current Weather Display -->
-    <div>
-      <h2 id="city-name"></h2>
-      <p id="date"></p>
-      <img id="weather-icon" alt="Weather Icon">
-      <p id="temperature"></p>
-      <p id="humidity"></p>
-      <p id="wind-speed"></p>
-    </div>
-
-    <!-- 5-Day Forecast Display -->
-    <!-- TODO: Add HTML structure for 5-day forecast -->
-
-    <!-- Search History Display -->
-    <!-- TODO: Add HTML structure for search history -->
-  </div>
+            <!-- 5-Day Forecast Display -->
+        <div id="forecast-container">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-list"></div>
+        </div>
+    </main> 
+    <footer>
+        <p>Made By: Parker Rappleye</p>
+    </footer>
 
   <script src="script.js"></script>
 </body>
