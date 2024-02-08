@@ -25,3 +25,11 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 <br>
 THEN I am again presented with current and future conditions for that city
+
+## Deployed Webpage
+
+https://prappleman.github.io/module6-challenge/
+
+## App Photos
+
+<img src="Assets/Screenshot 2024-02-07 213409.png" title="weather dashboard">
