@@ -32,4 +32,4 @@ https://prappleman.github.io/module6-challenge/
 
 ## App Photos
 
-<img src="Assets/Screenshot 2024-02-07 213409.png" title="weather dashboard">
+<img src="Assets/weatherapp.png" title="weather dashboard">
