@@ -73,6 +73,27 @@ footer {
     order: 4;
 }
 
+#today-container {
+    text-align: center;
+    order: 1;
+    min-width: 300px;
+    padding: 1rem;
+}
+
+#today-container p, h2{
+    margin: 0.5rem;
+}
+
+#temperature, #city-name, #weather-icon{
+    font-size: 3rem;
+    min-width: 100px;
+}
+
+#forecast-container {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
 .forecast-item {
     display: flex;
     flex-direction: row;
@@ -106,18 +127,6 @@ footer {
     order: 1;
     flex: auto;
     max-width: 2rem;
-}
-
-#today-container {
-    text-align: center;
-    margin-bottom: 3rem;
-    order: 1;
-    min-width: 300px;
-}
-
-#forecast-container {
-    margin-bottom: 5rem;
-    text-align: center;
 }
 
 /* mobile device sizing */
