@@ -13,6 +13,9 @@ h1 {
     text-align: center;
 }
 
+
+
+
 #city-input {
     text-align: center;
     width: 100%;
@@ -72,7 +75,8 @@ footer {
 }
 
 .forecast-item {
-    display: block;
+    display: flex;
+    flex-direction: row;
     padding: 1rem;
     background-color: #3d414b;
     border-radius: 0.5rem;
@@ -80,9 +84,36 @@ footer {
     width: auto;
 }
 
+.date {
+    margin: 0;
+    order: 2;
+    padding: 1rem;
+    flex: auto;
+    font-size: 1rem;
+    min-width: 180px;
+}
+
+.temp {
+    margin: 0;
+    order: 3;
+    padding: 1rem;
+    flex: auto;
+    font-size: 1rem;
+}
+
+.forecast-item img {
+    order: 1;
+    padding: 1rem;
+    flex: auto;
+    max-width: 2rem;
+
+}
+
 #today-container{
     text-align: center;
     margin-bottom: 3rem;
+    order: 1;
+    min-width: 300px;
 }
 
 #forecast-container {
@@ -117,10 +148,5 @@ footer {
     }
     footer {
         order: 4;
-    }
-    .forecast-item {
-        display: inline-block;
-        width: 6rem;
-    
     }
 }

@@ -104,12 +104,14 @@ function displayFiveDayForecast(forecastData) {
         var temperature = convertKelvinToFahrenheit(forecastData[i].main.temp);
   
         var dateElement = document.createElement("p");
+        dateElement.classList.add("date");
         dateElement.textContent = date.toLocaleDateString();
   
         var iconElement = document.createElement("img");
         iconElement.setAttribute("src", "http://openweathermap.org/img/w/" + iconCode + ".png");
   
         var temperatureElement = document.createElement("p");
+        temperatureElement.classList.add("temp");
         temperatureElement.textContent = Math.round(temperature) + "°F";
   
         forecastItem.appendChild(dateElement);
