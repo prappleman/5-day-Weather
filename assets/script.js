@@ -139,6 +139,50 @@ function updateSearchHistory(city) {
 }
 
 
+
+
+// Flag to prevent search when deleting history
+var preventSearch = false;
+
+// Function to add a close button to each history button
+function addCloseButtons(searchHistory) {
+    var historyButtons = document.querySelectorAll(".history");
+
+    historyButtons.forEach(function (button, index) {
+        var closeButton = document.createElement("button");
+        closeButton.classList.add("close");
+        closeButton.textContent = "X";
+
+        closeButton.addEventListener("click", function (event) {
+            // Prevent search when clicking close button
+            preventSearch = true;
+            event.stopPropagation(); // Prevent event bubbling
+
+            // Remove the corresponding search history entry
+            searchHistory.splice(index, 1);
+
+            // Update local storage
+            updateLocalStorage(searchHistory);
+
+            // Update the displayed history
+            displaySearchHistory(searchHistory);
+        });
+
+        button.appendChild(closeButton);
+    });
+}
+
+// Function to update local storage
+function updateLocalStorage(searchHistory) {
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+}
+
+// Function to retrieve search history from local storage
+function getSearchHistoryFromLocalStorage() {
+    var storedHistory = localStorage.getItem("searchHistory");
+    return storedHistory ? JSON.parse(storedHistory) : [];
+}
+
 // Function to display search history on the webpage
 function displaySearchHistory(searchHistory) {
     var historyList = document.getElementById("search-history-list");
@@ -147,17 +191,33 @@ function displaySearchHistory(searchHistory) {
 
     for (var i = 0; i < searchHistory.length; i++) {
         var button = document.createElement("button");
+        button.classList.add("history");
         button.textContent = searchHistory[i];
 
         button.addEventListener("click", function () {
-            var selectedCity = this.textContent;
-
-            getCurrentWeather(selectedCity);
+            if (!preventSearch) {
+                var selectedCity = this.textContent;
+                getCurrentWeather(selectedCity);
+            }
+            preventSearch = false; // Reset flag after click
         });
 
         historyList.appendChild(button);
     }
+
+    // Add close buttons to the existing history buttons
+    addCloseButtons(searchHistory);
 }
+
+// Initial setup: Retrieve search history from local storage
+var initialSearchHistory = getSearchHistoryFromLocalStorage();
+
+// Display initial search history on the webpage
+displaySearchHistory(initialSearchHistory);
+
+
+
+
 
 // Event listener for both the search button and "Enter" key on the input field
 document.getElementById("search-btn").addEventListener("click", handleSearch);
