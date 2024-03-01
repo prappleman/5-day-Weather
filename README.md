@@ -28,7 +28,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Deployed Webpage
 
-https://prappleman.github.io/module6-challenge/
+https://prappleman.github.io/5-day-Weather/
 
 ## App Photos
 
